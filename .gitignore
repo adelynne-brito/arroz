@@ -6,3 +6,7 @@ target/
 Cargo.lock
 
 .idea/vcs.xml
+
+*.kate-swp
+
+.idea/
