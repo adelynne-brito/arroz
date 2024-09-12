@@ -4,3 +4,5 @@ target/
 .idea/workspace.xml
 
 Cargo.lock
+
+.idea/vcs.xml
