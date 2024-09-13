@@ -2,3 +2,4 @@
 //! application specific implementation but rather serve as an interface for the hardware
 
 pub mod pca9557;
+pub mod bmp390;

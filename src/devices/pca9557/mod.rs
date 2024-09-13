@@ -8,6 +8,7 @@ mod address;
 // This serves to export the enums used by registers
 pub mod enums {
 	pub use super::registers::{Polarity,IODirection};
+	pub use super::address::Address;
 }
 
 use crate::devices::pca9557::registers::{Configuration, IODirection};
@@ -21,9 +22,7 @@ pub struct PCA9557<I: RegisterInterface> {
 
 #[device_impl]
 impl<I: RegisterInterface> PCA9557<I> {
-	pub fn init(&mut self){
 
-	}
 	pub async fn get_input_port(&mut self) -> Result<[LogicLevel;8], I::Error> {
 		 Ok(self.read_register::<InputPort>().await?.read_pins())
 	}

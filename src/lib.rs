@@ -1,4 +1,5 @@
 #![feature(generic_arg_infer)]
+#![no_std]
 
 pub mod devices;
 pub mod common;
