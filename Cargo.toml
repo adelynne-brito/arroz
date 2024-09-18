@@ -1,6 +1,6 @@
 [package]
 name = "arroz"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 
 [dependencies]
@@ -15,6 +15,9 @@ bytemuck = "1.18.0"
 embedded-hal-async = "1.0.0"
 embedded-hal = "1.0.0"
 maybe-async-cfg = "0.2.4"
+
+[dev-dependencies]
+assert_hex = "0.4.1"
 
 #todo! For whatever reason to get embbedded devices derive to work
 #  we neeed to import maybe-async-cfg and create a feature called "async"
