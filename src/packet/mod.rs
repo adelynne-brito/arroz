@@ -11,8 +11,11 @@ macro_rules! impl_packet {
 			fn get_type(&self) -> PacketType  {$p}
 			fn serialize(&self) -> Vec<u8> {
 				let data = self.into_bytes();
-				let mut out: Vec<u8> = Vec::with_capacity(data.len()+7);
+				let checksum = crc32fast::hash(&data);
+				
+				let mut out: Vec<u8> = Vec::with_capacity(data.len()+11);
 				out.extend(BEGIN_PACKET);
+				out.extend(checksum.to_le_bytes());
 				out.push(self.get_type() as u8);
 				out.push(data.len() as u8);
 				out.extend(data);
@@ -37,8 +40,8 @@ pub enum PacketType{
 	Test = 0xFF,
 }
 
-const BEGIN_PACKET: [u8;2] = [0x1F, 0x2F];
-const END_PACKET: [u8;2] = [0x3F, 0x4F];
+const BEGIN_PACKET: [u8;2] = [0xb0, 0x0b];
+const END_PACKET: [u8;2] = [0xa0, 0x0a];
 
 
 use bondrewd::Bitfields;
