@@ -27,12 +27,12 @@ pub enum PowerMode {
 #[bondrewd_enum(u8)]
 pub enum OversamplingSetting {
 	#[default]
-	x1 = 0b000,
-	x2 = 0b001,
-	x4 = 0b010,
-	x8 = 0b011,
-	x16 = 0b100,
-	x32 = 0b101,
+	X1 = 0b000,
+	X2 = 0b001,
+	X4 = 0b010,
+	X8 = 0b011,
+	X16 = 0b100,
+	X32 = 0b101,
 }
 
 
@@ -40,13 +40,13 @@ pub enum OversamplingSetting {
 #[bondrewd_enum(u8)]
 pub enum IIRFilter {
 	#[default]
-	Coeff_0= 0b000,
-	Coeff_1= 0b001,
-	Coeff_3= 0b010,
-	Coeff_7= 0b011,
-	Coeff_15= 0b100,
-	Coeff_31= 0b101,
-	Coeff_63= 0b110,
-	Coeff_127= 0b111,
+	Coeff0= 0b000,
+	Coeff1 = 0b001,
+	Coeff3= 0b010,
+	Coeff7= 0b011,
+	Coeff15= 0b100,
+	Coeff31= 0b101,
+	Coeff63= 0b110,
+	Coeff127= 0b111,
 
 }
